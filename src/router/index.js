@@ -1,17 +1,19 @@
 import { createWebHistory, createRouter } from "vue-router";
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
-const Home = { template: '<div>home</div>' };
+import Home from "@/views/Home.vue";
+import Favourites from "@/views/Favourites.vue";
 
 const routes = [
     {
         path: "/",
+        name: "Home",
         component: Home,
     },
-    { path: '/foo', component: Foo },
-    { path: '/bar', component: Bar }
-]
-
+    {
+        path: "/favourites",
+        name: "Favourites",
+        component: Favourites,
+    },
+];
 
 const router = createRouter({
     history: createWebHistory(),
@@ -19,5 +21,3 @@ const router = createRouter({
 });
 
 export default router;
-
-
